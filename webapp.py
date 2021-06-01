@@ -5,7 +5,11 @@ import mediapipe as mp
 import time
 import numpy as np
 import streamlit as st
-
+import requests
+url = 'https://raw.githubusercontent.com/bmox/rock_paper_scissor_streamlit/main/dataset.csv'
+res = requests.get(url, allow_redirects=True)
+with open('sales_team.csv','wb') as file:
+    file.write(res.content)
 
 
 class handDetector:
